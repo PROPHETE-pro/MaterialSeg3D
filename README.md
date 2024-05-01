@@ -75,7 +75,7 @@ pip install -v -e .
 cd MaterialSeg3D
 python gradio_demo.py
 ```
-- First remember to update the directory of your own path. The files need to be modified include `gradio_demo.py`, `./GET3D/render_shapenet_data/render_shapenet.py`,`./Text2Tex/scripts/view_2_UV.py`
+- Update the directory to your own path, find `/path-to-MaterialSeg3D/`. The files need to be modified include `gradio_demo.py`, `./GET3D/render_shapenet_data/render_shapenet.py`,`./Text2Tex/scripts/view_2_UV.py`
 - Please provide the directory of your 3D asset folder `./example/path_to_obj_file/`. Note that the folder should only contain one **.obj** mesh file and a Albedo RGB UV **.png** file, and an **.mtl** file. The folder name should match the name of the .obj file (i.e. `./example/car/car.obj`) 
 - Select the category of your asset. We currently support `car, furniture, building, instrument, plant` for prediction.
 - The stage output files can be found in `/output`, and the final generated ORM UV and materialized asset can be found in the object folder.
