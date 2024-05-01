@@ -1,0 +1,22 @@
+python scripts/generate_texture.py \
+    --input_dir /home/ruitong_gan/3D/Text2Tex/data/car1/ \
+    --output_dir /home/ruitong_gan/3D/Text2Tex/output/compare \
+    --obj_name e2b15244d80d405bbbc4fefbc00d36f6 \
+    --obj_file e2b15244d80d405bbbc4fefbc00d36f6.obj \
+    --prompt " red car" \
+    --add_view_to_prompt \
+    --ddim_steps 50 \
+    --new_strength 1 \
+    --update_strength 0.3 \
+    --view_threshold 0.1 \
+    --blend 0 \
+    --dist 1 \
+    --num_viewpoints 36 \
+    --viewpoint_mode predefined \
+    --use_principle \
+    --update_steps 20 \
+    --update_mode heuristic \
+    --seed 42 \
+    --post_process \
+    --device "2080" \
+    --use_objaverse # assume the mesh is normalized with y-axis as up

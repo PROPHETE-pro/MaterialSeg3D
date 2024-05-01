@@ -1,0 +1,13 @@
+Blender 2.90.0 (hash 0330d1af29c0 built 2020-08-31 11:54:54)
+/run/user/1006/gvfs/ non-existent directory
+found bundled python: /home/ruitong_gan/3D/blender-2.90.0-linux64/2.90/python
+Info: Deleted 1 object(s)
+Fra:1 Mem:119.45M (Peak 162.22M) | Time:00:02.24 | Mem:0.00M, Peak:0.00M | Scene, View Layer | Synchronizing object | SM_AI_vol8_01_chair_01
+Fra:1 Mem:167.03M (Peak 242.31M) | Time:00:02.82 | Mem:0.00M, Peak:0.00M | Scene, View Layer | Initializing
+Fra:1 Mem:139.43M (Peak 242.31M) | Time:00:02.82 | Mem:0.00M, Peak:0.00M | Scene, View Layer | Waiting for render to start
+Fra:1 Mem:139.44M (Peak 242.31M) | Time:00:02.82 | Mem:0.00M, Peak:0.00M | Scene, View Layer | Loading render kernels (may take a few minutes the first time)
+
+Sent an internal break event. Press ^C again to kill Blender
+
+Blender killed
+Error: Not freed memory blocks: 25980, total unfreed memory 139.436028 MB
