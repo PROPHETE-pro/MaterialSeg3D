@@ -263,13 +263,7 @@ def render_to_uv(sample_folder, category):
     ORM = cv2.imread(ORM_dir)
     ORM_rgb = ORM[:,:,[2,1,0]]
 
-
-    cmd2 = f'/path-to-MaterialSeg3D/blender-2.90.0-linux64/blender -b -P material_glb.py -- --obj_file {sample_folder} --orm_path {ORM_dir}'
-    os.system(cmd2)
-
-    glb_path = os.path.join(sample_folder, sample+'.glb')
-
-    return ORM_rgb, glb_path
+    return ORM_rgb
 
 
 def display(sample_folder):
@@ -287,6 +281,12 @@ def display(sample_folder):
 
     return uv, mesh_path
 
+def example_dir(img_dir):
+    pdb.set_trace()
+    input_dir = "".join(img_dir.split('/')[:-1])
+
+    return input_dir
+
 def example(sample_folder):
     return './figure/material_ue.png', './figure/material_car.png', './figure/raw_ue.png', './figure/raw_car.png'
 
@@ -298,7 +298,8 @@ with gr.Blocks(title="MaterialSeg3D") as interface:
     **Tips:**
     1. Please input the directory of the folder containing the .obj file and .png Albedo UV (do not contain any other file ends with .png or .obj).
     2. Do not input the quotation mark of the directory (i.e. /path/to/asset).
-    3. It requires ~5 minutes to run the segmentation step, and ~15 minutes for the material generation. Please refer to the local storage for the process.
+    3. To run your own examples, just place them following the instructions in README.md.
+    4. It requires ~5 minutes to run the segmentation step, and ~15 minutes for the material generation. Please refer to the local storage for the process.
     """
     )
     with gr.Column():
@@ -309,6 +310,26 @@ with gr.Blocks(title="MaterialSeg3D") as interface:
                                            label="Category", info="Choose the category of the asset")
             albedo_uv = gr.Image(interactive=False, show_label=False)
             input_mesh = gr.Model3D(interactive=False, label='Input mesh')
+
+        with gr.Row(variant="panel"):
+            gr.Examples(
+                examples=[
+                    "example/car/",
+                    "example/chair1/",
+                    "example/chair2/",
+                    "example/bed1/",
+                    "example/Build1/",
+                    "example/Build2/",
+                    "example/instrument1/",
+                    "example/plant1/",
+                    "example/plant2/",
+                ],
+                inputs=[input_dir],
+                cache_examples=False,
+                # fn=example_dir,
+                label="Examples",
+                examples_per_page=15,
+            )
         with gr.Row():
             view_1 = gr.Image(interactive=False, height=240, show_label=False)
             view_2 = gr.Image(interactive=False, height=240, show_label=False)
@@ -325,7 +346,6 @@ with gr.Blocks(title="MaterialSeg3D") as interface:
 
         with gr.Row():
             ORM = gr.Image(interactive=False, label='ORM UV map with Opacity, Roughness, and Metallic')
-            material_glb = gr.Model3D(interactive=False, label='Materialized object')
 
         seg_btn = gr.Button('Rendering', variant='primary', interactive=True)
         uv_btn = gr.Button('Materializing', variant='primary', interactive=True)
@@ -335,7 +355,7 @@ with gr.Blocks(title="MaterialSeg3D") as interface:
         # Render your own asset
         
         **Note:**
-        * The display quality of gr.Model3D cannot show the visual effect of the applied material. We highly recommend you to render the object within the render engine.
+        * We highly recommend you to render the materialied object within your own render engine after downloading the ORM UV map from the demo.
 
         **Steps:**
         1. Download the provided ORM UV map from the displayed result and place it in the input directory (already saved to the given folder).
@@ -356,6 +376,6 @@ with gr.Blocks(title="MaterialSeg3D") as interface:
 
     seg_btn.click(fn=display, inputs=[input_dir],outputs=[albedo_uv,input_mesh]).success(fn=get_rendering, inputs=[input_dir], outputs=[view_1,view_2,view_3,view_4,view_5]).success(
         fn=get_segmentation, inputs=[input_dir, select_cat], outputs=[seg1,seg2,seg3,seg4,seg5])
-    uv_btn.click(fn=render_to_uv, inputs=[input_dir, select_cat], outputs=[ORM, material_glb]).success(fn=example, inputs=[input_dir], outputs=[mat_ue, mat_car, raw_ue, raw_car])
+    uv_btn.click(fn=render_to_uv, inputs=[input_dir, select_cat], outputs=[ORM]).success(fn=example, inputs=[input_dir], outputs=[mat_ue, mat_car, raw_ue, raw_car])
 
 interface.launch(share=True)
