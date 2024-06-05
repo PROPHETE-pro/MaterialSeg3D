@@ -1,0 +1,6 @@
+# https://github.com/mikedh/trimesh
+
+newmtl material_0
+
+map_Kd plant1.png
+

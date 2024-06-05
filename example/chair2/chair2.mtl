@@ -1,0 +1,5 @@
+# https://github.com/mikedh/trimesh
+
+newmtl material_0
+
+map_Kd chair2.png

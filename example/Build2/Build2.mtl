@@ -1,0 +1,5 @@
+# https://github.com/mikedh/trimesh
+
+newmtl material_0
+map_Kd Build2.png
+
