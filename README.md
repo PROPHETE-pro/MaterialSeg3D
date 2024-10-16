@@ -9,7 +9,7 @@ Motivated by the fact that expert 3D modelers tend to manually apply surface PBR
 
 Our **MIO** dataset can be access through [Google Drive](https://drive.google.com/file/d/1wDJg7Rp4AYn1OAKvZONrKj62Jd2cdID0/view?usp=drive_link).
 
-Our **MIO++** dataset can be access through [Google Drive](https://drive.google.com/file/d/19F1gVQywUDJ9mwVmnqj4uhtdaplUv4aK/view?usp=drive_link).
+Our **MIO++** dataset can be access through [Google Drive](https://drive.google.com/file/d/19F1gVQywUDJ9mwVmnqj4uhtdaplUv4aK/view?usp=drive_link) or [Baidu Drive](https://pan.baidu.com/s/1m5etUkILo2n2W0cKr6ZZjg?pwd=wrr8).
 
 ## Getting Started
 
