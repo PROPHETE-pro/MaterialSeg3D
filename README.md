@@ -1,4 +1,4 @@
-# MaterialSeg3D: Segmenting Dense Materials from 2D Priors for 3D Assets ————MM2024(Oral) <a href="https://arxiv.org/abs/2404.13923"><img src="https://img.shields.io/badge/Arxiv-2404.13923-B31B1B.svg"></a>
+# MaterialSeg3D: Segmenting Dense Materials from 2D Priors for 3D Assets ——— MM2024(Oral) <a href="https://arxiv.org/abs/2404.13923"><img src="https://img.shields.io/badge/Arxiv-2404.13923-B31B1B.svg"></a>
 
 ![Teaser image](./figure/teaser.jpg)
 ![Teaser image](./figure/compare.jpg)
