@@ -92,6 +92,13 @@ python gradio_demo.py
 
 ## Citation
 ```BibTeX
+@article{2024MaterialSeg3D,
+  title={MaterialSeg3D: Segmenting Dense Materials from 2D Priors for 3D Assets},
+  author={ Li, Zeyu  and  Gan, Ruitong  and  Luo, Chuanchen  and  Wang, Yuxi  and  Liu, Jiaheng  and  Zhang, Ziwei Zhu Man  and  Li, Qing  and  Yin, Xucheng  and  Zhang, Zhaoxiang  and  Peng, Junran },
+  year={2024},
+}
+```
+```BibTeX
 @article{li2024materialseg3d,
   title={MaterialSeg3D: Segmenting Dense Materials from 2D Priors for 3D Assets},
   author={Li, Zeyu and Gan, Ruitong and Luo, Chuanchen and Wang, Yuxi and Liu, Jiaheng and Zhang, Ziwei Zhu Man and Li, Qing and Yin, Xucheng and Zhang, Zhaoxiang and Peng, Junran},
