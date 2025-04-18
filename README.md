@@ -33,6 +33,8 @@ pip install -r requirements.txt
 cd ..
 ```
 It is necessary to download `control_sd15_depth.pth` from the [hugging face page](https://huggingface.co/lllyasviel/ControlNet/tree/main/models), and put it under `./Text2Tex/models/ControlNet/models/`.
+
+**Update on 2025.04.19**: When running `pip install -r requirements.txt`, the package`pytorch-lightning==1.9.1`will automatically update your `torch` version to the latest, as torch is not installed by pip. You should remove this package from `requirements.txt`, and manually run `conda install pytorch-lightning=1.9.1 pytorch=1.12.1 -c conda-forge` instead.
 - Install [GET3D](https://github.com/nv-tlabs/GET3D/blob/master/install_get3d.sh) dependencies
 ```sh
 pip install ninja xatlas gdown
