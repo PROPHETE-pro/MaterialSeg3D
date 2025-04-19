@@ -34,7 +34,8 @@ cd ..
 ```
 It is necessary to download `control_sd15_depth.pth` from the [hugging face page](https://huggingface.co/lllyasviel/ControlNet/tree/main/models), and put it under `./Text2Tex/models/ControlNet/models/`.
 
-**Update on 2025.04.19**: When running `pip install -r requirements.txt`, the package`pytorch-lightning==1.9.1`will automatically update your `torch` version to the latest, as torch is not installed by pip. You should remove this package from `requirements.txt`, and manually run `conda install pytorch-lightning=1.9.1 pytorch=1.12.1 -c conda-forge` instead.
+**Update on 2025.04.19**: When running `pip install -r requirements.txt`, the package`pytorch-lightning==1.9.1`will automatically update your `torch` version to the latest, as torch is not installed by pip. You should remove this package from `requirements.txt`, and manually run `conda install pytorch-lightning=1.9.1 pytorch=1.12.1 -c conda-forge` instead. `huggingface_hub` is also required to be downgraded, run `pip install huggingface_hub==0.22.2` after installing `transformers`.
+
 - Install [GET3D](https://github.com/nv-tlabs/GET3D/blob/master/install_get3d.sh) dependencies
 ```sh
 pip install ninja xatlas gdown
@@ -74,6 +75,7 @@ pip install -v -e .
 - mmengine == 0.10.3
 - mmseg == 1.2.2
 - Our workflow requires the environment to be compatible on [GET3D](https://github.com/nv-tlabs/GET3D), [Text2Tex](https://github.com/daveredrum/Text2Tex), [MMSegmentation](https://github.com/open-mmlab/mmsegmentation/tree/main).
+- **Updated 2025.04.19** The `pip list` of an applicable environment is uploaded at `MaterialSeg3d-envs`, please refer to the versions if necessary.
 
 
 ### Inference Demo
