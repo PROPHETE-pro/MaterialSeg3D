@@ -8,6 +8,7 @@ This is the official codebase for **MaterialSeg3D**, a novel apporach for genera
 Motivated by the fact that expert 3D modelers tend to manually apply surface PBR material information based on their prior knowledge of the material information, we manage to utilize 2D perception-based method to learn material information from existing 2D images from public websites and datasets. We conduct a single-object material segmentation dataset **Materialized Individual Objects (MIO)**, and propose a novel workflow that can automatically predict the surface material information of the given 3D assets, named **MaterialSeg3D**.
 
 Our **MIO** dataset can be access through [Google Drive](https://drive.google.com/file/d/1wDJg7Rp4AYn1OAKvZONrKj62Jd2cdID0/view?usp=drive_link).
+The **Roughness** and **Metalness** value for each material class can be found in `MIO.pkl` with the key `coordinates`.
 
 Our **MIO++** dataset can be access through [Google Drive](https://drive.google.com/file/d/1W1ci-SxvcO79kLw9wjQ2KGUPtDap8kKJ/view?usp=sharing).
 
