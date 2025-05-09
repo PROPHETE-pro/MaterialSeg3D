@@ -8,6 +8,7 @@ This is the official codebase for **MaterialSeg3D**, a novel apporach for genera
 Motivated by the fact that expert 3D modelers tend to manually apply surface PBR material information based on their prior knowledge of the material information, we manage to utilize 2D perception-based method to learn material information from existing 2D images from public websites and datasets. We conduct a single-object material segmentation dataset **Materialized Individual Objects (MIO)**, and propose a novel workflow that can automatically predict the surface material information of the given 3D assets, named **MaterialSeg3D**.
 
 Our **MIO** dataset can be access through [Google Drive](https://drive.google.com/file/d/1wDJg7Rp4AYn1OAKvZONrKj62Jd2cdID0/view?usp=drive_link).
+The **Roughness** and **Metalness** value for each material class can be found in `MIO.pkl` with the key `coordinates`.
 
 Our **MIO++** dataset can be access through [Google Drive](https://drive.google.com/file/d/1W1ci-SxvcO79kLw9wjQ2KGUPtDap8kKJ/view?usp=sharing).
 
@@ -34,7 +35,8 @@ cd ..
 ```
 It is necessary to download `control_sd15_depth.pth` from the [hugging face page](https://huggingface.co/lllyasviel/ControlNet/tree/main/models), and put it under `./Text2Tex/models/ControlNet/models/`.
 
-**Update on 2025.04.19**: When running `pip install -r requirements.txt`, the package`pytorch-lightning==1.9.1`will automatically update your `torch` version to the latest, as torch is not installed by pip. You should remove this package from `requirements.txt`, and manually run `conda install pytorch-lightning=1.9.1 pytorch=1.12.1 -c conda-forge` instead.
+**Update on 2025.04.19**: When running `pip install -r requirements.txt`, the package`pytorch-lightning==1.9.1`will automatically update your `torch` version to the latest, as torch is not installed by pip. You should remove this package from `requirements.txt`, and manually run `conda install pytorch-lightning=1.9.1 pytorch=1.12.1 -c conda-forge` instead. `huggingface_hub` is also required to be downgraded, run `pip install huggingface_hub==0.22.2` after installing `transformers`.
+
 - Install [GET3D](https://github.com/nv-tlabs/GET3D/blob/master/install_get3d.sh) dependencies
 ```sh
 pip install ninja xatlas gdown
@@ -74,6 +76,7 @@ pip install -v -e .
 - mmengine == 0.10.3
 - mmseg == 1.2.2
 - Our workflow requires the environment to be compatible on [GET3D](https://github.com/nv-tlabs/GET3D), [Text2Tex](https://github.com/daveredrum/Text2Tex), [MMSegmentation](https://github.com/open-mmlab/mmsegmentation/tree/main).
+- **Updated 2025.04.19** The `pip list` of an applicable environment is uploaded at `MaterialSeg3d-envs`, please refer to the versions if necessary.
 
 
 ### Inference Demo
