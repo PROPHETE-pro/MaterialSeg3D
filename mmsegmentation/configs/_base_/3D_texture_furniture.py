@@ -14,7 +14,7 @@ data_preprocessor = dict(
     pad_val=0,
     seg_pad_val=255,
     size=crop_size)
-num_classes = 20
+num_classes = 16
 
 
 model = dict(
@@ -151,7 +151,7 @@ test_pipeline = [
 
 
 custom3D_train = dict(
-    type = 'texture3DDataset',
+    type = 'MIODataset',
     data_root = '/home/ruitong_gan/3D/data/texture',
 data_prefix=dict(
             img_path='train/furniture/Image', seg_map_path='train/furniture/GT'),
@@ -159,7 +159,7 @@ data_prefix=dict(
 )
 
 custom3D_val = dict(
-    type = 'texture3DDataset',
+    type = 'MIODataset',
     data_root = '/home/ruitong_gan/3D/data/texture',
 data_prefix=dict(
             img_path='val/furniture/Image', seg_map_path='val/furniture/GT'),
